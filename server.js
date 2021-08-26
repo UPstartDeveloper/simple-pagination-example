@@ -6,16 +6,10 @@ const Posts = require('./models/posts');
 const app = express();
 const port = 3000;
 
-// mongoose.connect(process.env.MONGO_URI, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
-
-mongoose.connect('mongodb://localhost:27017/test', {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
-
 
 app.get('/posts', async (req, res) => {
   // destructure page and limit and set default values
